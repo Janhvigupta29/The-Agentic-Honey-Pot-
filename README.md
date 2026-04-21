@@ -2,8 +2,6 @@
 
 > **Security-as-an-Agent.** Instead of a static firewall, an AI agent monitors live traffic, detects attacks, and autonomously spins up a mirror honeypot environment — rerouting the attacker there while keeping the primary app fully protected.
 
-Built for hackathon. Powered by Claude (Anthropic) + Locus API.
-
 ---
 
 ## How it works
@@ -167,10 +165,3 @@ app.post('/api/locus/create-environment', async (req, res) => {
 Add `LOCUS_API_KEY` to your `.env`.
 
 ---
-
-## Built with
-
-- [Claude (Anthropic)](https://anthropic.com) — AI threat analysis agent
-- [Locus API](https://locus.io) — instant environment provisioning
-- Express.js — lightweight backend / API proxy
-- Vanilla JS — zero-dependency frontend
