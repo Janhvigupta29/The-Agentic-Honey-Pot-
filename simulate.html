@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sentinel — Agentic Honeypot</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Locus DefenderX</title>
+  <link rel="stylesheet" href="sim_styles.css" />
 </head>
 <body>
 <div id="app">
 
   <div class="top-bar">
-    <span class="logo">⬡ SENTINEL — Agentic Honeypot</span>
+    <span class="logo">⬡ Locus DefenderX</span>
     <div style="flex:1"></div>
     <span class="status-chip chip-ok" id="main-status">
       <span class="dot g" id="main-dot"></span>
@@ -25,7 +25,13 @@
 
     <!-- Panel 1: Traffic feed -->
     <div class="panel">
-      <div class="panel-title"><span style="color:#4361ee">●</span> live traffic feed</div>
+      <div class="panel-title"><span style="color:#4361ee">●</span> live traffic feed
+        <div class="btn-row">
+          <button class="sim-btn btn-atk" onclick="triggerAttack()">⚡ Simulate attack</button>
+          <button class="sim-btn btn-norm" onclick="triggerNormal()">+ Normal burst</button>
+          <button class="sim-btn btn-reset" onclick="resetSystem()">↺ Reset</button>
+        </div>
+      </div>
       <div class="counter-row">
         <div class="counter"><div class="counter-val c-g" id="cnt-ok">0</div><div class="counter-lbl">Normal</div></div>
         <div class="counter"><div class="counter-val c-y" id="cnt-sus">0</div><div class="counter-lbl">Suspicious</div></div>
@@ -33,11 +39,6 @@
         <div class="counter"><div class="counter-val c-p" id="cnt-hp">0</div><div class="counter-lbl">→ HP</div></div>
       </div>
       <div id="traffic-feed" class="traffic-feed"></div>
-      <div class="btn-row">
-        <button class="sim-btn btn-atk" onclick="triggerAttack()">⚡ Simulate attack</button>
-        <button class="sim-btn btn-norm" onclick="triggerNormal()">+ Normal burst</button>
-        <button class="sim-btn btn-reset" onclick="resetSystem()">↺ Reset</button>
-      </div>
     </div>
 
     <!-- Panel 2: AI agent -->

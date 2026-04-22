@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Locus DefenderX — Stop Attacks Before They Touch Your App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">
+    <span class="hex">⬡</span> Locus DefenderX
+  </div>
+  <ul class="nav-links">
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn btn-ghost">Sign in</button>
+    <button class="btn btn-primary">Start free →</button>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="reveal">
+      <div class="hero-eyebrow">
+        <span class="pulse"></span> AI-Powered Security Agent
+      </div>
+    </div>
+    <h1 class="reveal reveal-delay-1">
+      Stop attacks<br><em>before they</em><br>touch your app
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      Detect suspicious traffic in real time and instantly redirect attackers to isolated honey-pot environments. Your application stays safe while threats are contained and analysed.
+    </p>
+    <div class="hero-ctas reveal reveal-delay-3">
+      <button class="btn btn-primary btn-lg">Start free →</button>
+      <button class="btn btn-outline btn-lg">▶ See how it works</button>
+    </div>
+
+    <div class="hero-visual reveal reveal-delay-4">
+      <div class="hero-visual-inner">
+        <div class="hero-dashboard">
+          <div class="hd-bar">
+            <div class="hd-dot" style="background:#ff4560"></div>
+            <div class="hd-dot" style="background:#f5c842"></div>
+            <div class="hd-dot" style="background:#00e87a"></div>
+            <span class="hd-title">Locus DefenderX — Live Traffic Monitor</span>
+            <div class="hd-badge"><span class="pulse" style="width:5px;height:5px;border-radius:50%;background:var(--acc);display:inline-block"></span> PROTECTED</div>
+          </div>
+          <div class="hd-grid">
+            <div class="hd-panel">
+              <!-- Panel 1: Traffic feed
+              <div class="panel">
+                <div class="panel-title"><span style="color:#4361ee">●</span> live traffic feed</div>
+                <div class="counter-row">
+                  <div class="counter"><div class="counter-val c-g" id="cnt-ok">0</div><div class="counter-lbl">Normal</div></div>
+                  <div class="counter"><div class="counter-val c-y" id="cnt-sus">0</div><div class="counter-lbl">Suspicious</div></div>
+                  <div class="counter"><div class="counter-val c-r" id="cnt-atk">0</div><div class="counter-lbl">Blocked</div></div>
+                  <div class="counter"><div class="counter-val c-p" id="cnt-hp">0</div><div class="counter-lbl">→ HP</div></div>
+                </div>
+                <div id="traffic-feed" class="traffic-feed"></div>
+                <div class="btn-row">
+                  <button class="sim-btn btn-atk" onclick="triggerAttack()">⚡ Simulate attack</button>
+                  <button class="sim-btn btn-norm" onclick="triggerNormal()">+ Normal burst</button>
+                  <button class="sim-btn btn-reset" onclick="resetSystem()">↺ Reset</button>
+                </div>
+              </div> -->
+              <div class="hd-panel-title">Threats blocked</div>
+              <div class="hd-stat">1,284</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:-4px">↑ 12% this week</div>
+              <div style="margin-top:6px;display:flex;flex-direction:column;gap:6px">
+                <div>
+                  <div style="font-size:10px;color:var(--muted);margin-bottom:3px">SQL Injection</div>
+                  <div class="hd-line"><div class="hd-line-fill" style="width:72%;background:var(--red)"></div></div>
+                </div>
+                <div>
+                  <div style="font-size:10px;color:var(--muted);margin-bottom:3px">Path Traversal</div>
+                  <div class="hd-line"><div class="hd-line-fill" style="width:48%;background:var(--yellow)"></div></div>
+                </div>
+                <div>
+                  <div style="font-size:10px;color:var(--muted);margin-bottom:3px">XSS Attempts</div>
+                  <div class="hd-line"><div class="hd-line-fill" style="width:31%;background:#b5179e"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="hd-panel">
+              <div class="hd-panel-title">Live request log</div>
+              <div class="hd-log" id="hero-log">
+                <div class="hd-log-row"><div class="hd-log-dot" style="background:#00e87a"></div><span>GET /api/users — 192.168.1.1</span></div>
+                <div class="hd-log-row"><div class="hd-log-dot" style="background:#00e87a"></div><span>POST /api/auth — 10.0.0.5</span></div>
+                <div class="hd-log-row"><div class="hd-log-dot" style="background:#f5c842"></div><span>GET /../etc/passwd — 185.220.101.47</span></div>
+                <div class="hd-log-row"><div class="hd-log-dot" style="background:#ff4560"></div><span style="color:#ff6680">SQL INJECT — 45.33.32.156 → HP</span></div>
+                <div class="hd-log-row"><div class="hd-log-dot" style="background:#00e87a"></div><span>GET /api/products — 172.16.0.2</span></div>
+              </div>
+            </div>
+            <div class="hd-panel">
+              <div class="hd-panel-title">Infrastructure</div>
+              <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+                <div style="background:rgba(0,232,122,0.07);border:1px solid rgba(0,232,122,0.2);border-radius:8px;padding:10px">
+                  <div style="font-size:10px;color:var(--acc);font-family:var(--heading);font-weight:600;letter-spacing:1px">🖥 PRIMARY APP</div>
+                  <div style="font-size:10px;color:var(--muted);margin-top:3px">app.myservice.io · HEALTHY</div>
+                </div>
+                <div style="background:rgba(181,23,158,0.07);border:1px solid rgba(181,23,158,0.2);border-radius:8px;padding:10px">
+                  <div style="font-size:10px;color:#d06fd0;font-family:var(--heading);font-weight:600;letter-spacing:1px">🍯 HONEYPOT</div>
+                  <div style="font-size:10px;color:var(--muted);margin-top:3px">hp-45a2f.locus.io · LIVE</div>
+                </div>
+                <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:4px;font-family:var(--heading)">↑ 3 attackers trapped</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DETECTION SECTION ─────────────────────────── -->
+<section class="detection" id="features">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag reveal">Detection</span>
+      <h2 class="section-heading reveal reveal-delay-1">Real-time threat<br>identification</h2>
+      <p class="section-sub reveal reveal-delay-2">The AI agent watches your traffic constantly — learning, adapting, and acting before damage is done.</p>
+    </div>
+
+    <div class="feature-cards">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="fc-tag">Deployment</div>
+        <div class="fc-title">Instant honey-pot environment creation</div>
+        <div class="fc-body">Locus API spins up isolated instances immediately. Zero manual configuration, zero downtime.</div>
+        <a href="#" class="fc-link">Learn →</a>
+        <div class="fc-visual fc-visual-1">
+          <div class="anim-shield">🛡️</div>
+        </div>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="fc-tag">Rerouting</div>
+        <div class="fc-title">Attackers sent to contained environments</div>
+        <div class="fc-body">Your app remains untouched and operational while the attacker wastes their time in a decoy.</div>
+        <a href="#" class="fc-link">Explore →</a>
+        <div class="fc-visual fc-visual-2">
+          <div class="anim-redirect">
+            <span style="color:#ff6680;font-size:11px">185.220.x.x</span>
+            <span class="arr" style="color:var(--yellow)">──▶</span>
+            <span style="color:#d06fd0;font-size:11px">🍯 HP</span>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="fc-tag">Analysis</div>
+        <div class="fc-title">Threats captured and studied safely</div>
+        <div class="fc-body">Understand attack patterns without risk. Every attacker move is logged and analysed by the AI.</div>
+        <a href="#" class="fc-link">Discover →</a>
+        <div class="fc-visual fc-visual-3">
+          <div class="anim-scan">
+            <div class="bar" style="height:12px"></div>
+            <div class="bar" style="height:12px"></div>
+            <div class="bar" style="height:12px"></div>
+            <div class="bar" style="height:12px"></div>
+            <div class="bar" style="height:12px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sim">
+        <button class="btn btn-primary">⚡ Simulate attack →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECURITY SECTION ──────────────────────────── -->
+<section class="security">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag reveal">Security</span>
+      <h2 class="section-heading reveal reveal-delay-1">Security that<br>actually works</h2>
+      <p class="section-sub reveal reveal-delay-2">Stop threats before they reach your systems.</p>
+    </div>
+
+    <div class="security-grid">
+      <div class="sec-card featured reveal reveal-delay-1">
+        <div class="sc-tag">Speed</div>
+        <div class="sc-title">Instant response to attacks</div>
+        <div class="sc-body">Every second matters in security. Sentinel detects and deploys a honeypot in under 500ms — before an attacker can get their second request through.</div>
+        <a href="#" class="sc-link">Act →</a>
+        <div class="sc-visual">
+          <div style="text-align:center">
+            <div class="anim-timer" id="timer-display">0.3s</div>
+            <div style="font-size:10px;color:var(--muted);margin-top:4px;font-family:var(--heading);letter-spacing:1px">AVG. RESPONSE TIME</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-card reveal reveal-delay-2">
+        <div class="sc-tag">Peace of mind</div>
+        <div class="sc-title">Sleep soundly</div>
+        <div class="sc-body">Know your application is defended around the clock, even while you sleep.</div>
+        <a href="#" class="sc-link">Rest →</a>
+        <div class="sc-visual">
+          <div class="anim-check">
+            <div class="check-row"><div class="check-icon">✓</div><span>Primary app safe</span></div>
+            <div class="check-row"><div class="check-icon">✓</div><span>Attacker rerouted</span></div>
+            <div class="check-row"><div class="check-icon">✓</div><span>Threat logged</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-card reveal reveal-delay-3">
+        <div class="sc-tag">Intelligence</div>
+        <div class="sc-title">Learn from attacks</div>
+        <div class="sc-body">Analyse attacker behaviour in isolation. Build a knowledge base from real threat data.</div>
+        <a href="#" class="sc-link">Study →</a>
+        <div class="sc-visual">
+          <div class="anim-chart">
+            <div class="chart-bar" style="height:28px"></div>
+            <div class="chart-bar" style="height:42px"></div>
+            <div class="chart-bar" style="height:35px"></div>
+            <div class="chart-bar" style="height:56px"></div>
+            <div class="chart-bar" style="height:48px"></div>
+            <div class="chart-bar" style="height:65px"></div>
+            <div class="chart-bar" style="height:52px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS SECTION ───────────────────────────── -->
+<section class="process" id="how-it-works">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag reveal">Process</span>
+      <h2 class="section-heading reveal reveal-delay-1">How Honey-Pot<br>Guardian works</h2>
+      <p class="section-sub reveal reveal-delay-2">The system monitors incoming traffic and identifies suspicious patterns. When a threat is detected, it acts immediately.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step reveal reveal-delay-1">
+        <div class="ps-num">01</div>
+        <div class="ps-title">Traffic arrives</div>
+        <div class="ps-body">Your application receives requests from users and potential attackers alike. Every request is logged and scored in real time.</div>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="ps-num">02</div>
+        <div class="ps-title">AI analyzes patterns</div>
+        <div class="ps-body">The agent examines behaviour and flags anything that looks like an attack — SQL injection, path traversal, brute force, and more.</div>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="ps-num">03</div>
+        <div class="ps-title">Attacker redirected</div>
+        <div class="ps-body">Suspicious traffic gets sent to an isolated honey-pot environment instead, while your real app continues running normally.</div>
+      </div>
+    </div>
+
+    <div class="process-visual reveal">
+      <div class="flow-diagram">
+        <div class="flow-node">
+          <div class="fn-box">
+            <div class="fn-icon">🌐</div>
+            <div class="fn-label">Incoming traffic</div>
+            <div class="fn-sub">All HTTP requests</div>
+          </div>
+        </div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node">
+          <div class="fn-box" style="background:rgba(245,200,66,0.07);border-color:rgba(245,200,66,0.25)">
+            <div class="fn-icon">🤖</div>
+            <div class="fn-label" style="color:var(--yellow)">AI Agent</div>
+            <div class="fn-sub">Pattern analysis</div>
+          </div>
+        </div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node" style="display:flex;flex-direction:column;gap:10px">
+          <div class="fn-box safe">
+            <div class="fn-icon">🖥</div>
+            <div class="fn-label" style="color:var(--acc)">Your App</div>
+            <div class="fn-sub">Safe &amp; healthy</div>
+          </div>
+          <div style="font-size:11px;color:var(--muted);text-align:center">OR</div>
+          <div class="fn-box target">
+            <div class="fn-icon">🍯</div>
+            <div class="fn-label" style="color:#d06fd0">Honeypot</div>
+            <div class="fn-sub">Attacker trapped</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ──────────────────────────────── -->
+<section class="testimonials" id="results">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag reveal">Real results</span>
+      <h2 class="section-heading reveal reveal-delay-1">Teams trust<br>Honey-Pot Guardian</h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">"We stopped <strong>three major attacks</strong> in the first month without any disruption to our users."</div>
+        <div class="testi-author">
+          <div class="author-avatar" style="background:rgba(0,232,122,0.15);color:var(--acc)">SQ</div>
+          <div>
+            <div class="author-name">Sarah Qian</div>
+            <div class="author-role">Security lead, TechNow</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">"The speed of response is incredible. <strong>Threats are contained</strong> before we even finish our morning coffee."</div>
+        <div class="testi-author">
+          <div class="author-avatar" style="background:rgba(245,200,66,0.12);color:var(--yellow)">MR</div>
+          <div>
+            <div class="author-name">Marcus Rodrigues</div>
+            <div class="author-role">CTO, Datastream Systems</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-3">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">"Finally, a solution that <strong>doesn't slow down</strong> our application while keeping us safe."</div>
+        <div class="testi-author">
+          <div class="author-avatar" style="background:rgba(181,23,158,0.12);color:#d06fd0">SV</div>
+          <div>
+            <div class="author-name">Steve Volkov</div>
+            <div class="author-role">Founder, CloudShield Inc</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────── -->
+<section class="cta-section">
+  <div class="container">
+    <span class="tag reveal">Get started</span>
+    <h2 class="section-heading reveal reveal-delay-1">Your app deserves<br><em>real protection</em></h2>
+    <p class="section-sub reveal reveal-delay-2">Deploy in minutes. No DevOps required. The agent handles everything automatically.</p>
+    <div class="cta-btns reveal reveal-delay-3">
+      <button class="btn btn-primary btn-lg">Start free →</button>
+      <button class="btn btn-outline btn-lg">Book a demo</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">⬡ <span>Sentinel</span></div>
+      <div class="footer-links">
+        <a href="#">How it works</a>
+        <a href="#">Pricing</a>
+        <a href="#">Blog</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-copy">© 2025 Sentinel. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Scroll reveal ──────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Trigger hero elements immediately
+  setTimeout(() => {
+    document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible'));
+  }, 100);
+
+  // ── Hero log ticker ────────────────────────────
+  const logEntries = [
+    { c: '#00e87a', t: 'GET /api/users — 192.168.1.1' },
+    { c: '#00e87a', t: 'POST /api/auth — 10.0.0.14' },
+    { c: '#f5c842', t: "GET ';DROP TABLE users;-- — 45.33.32.156" },
+    { c: '#ff4560', t: 'PATH TRAVERSAL → HP rerouted' },
+    { c: '#00e87a', t: 'GET /api/products — 172.16.0.8' },
+    { c: '#00e87a', t: 'GET /health — 192.168.0.5' },
+    { c: '#f5c842', t: 'GET /.env — 185.220.101.47' },
+    { c: '#ff4560', t: 'XSS INJECT → HP rerouted' },
+    { c: '#00e87a', t: 'POST /api/orders — 10.0.1.3' },
+  ];
+  let logIdx = 0;
+  const heroLog = document.getElementById('hero-log');
+  setInterval(() => {
+    if (!heroLog) return;
+    const entry = logEntries[logIdx % logEntries.length];
+    logIdx++;
+    const row = document.createElement('div');
+    row.className = 'hd-log-row';
+    row.innerHTML = `<div class="hd-log-dot" style="background:${entry.c}"></div><span style="color:${entry.c === '#ff4560' ? '#ff6680' : ''}">${entry.t}</span>`;
+    heroLog.appendChild(row);
+    if (heroLog.children.length > 7) heroLog.removeChild(heroLog.firstChild);
+    heroLog.scrollTop = heroLog.scrollHeight;
+  }, 1400);
+
+  // ── Timer counter animation ────────────────────
+  const timerEl = document.getElementById('timer-display');
+  const timerVals = ['0.3s', '0.4s', '0.2s', '0.5s', '0.3s'];
+  let ti = 0;
+  setInterval(() => {
+    if (!timerEl) return;
+    timerEl.style.opacity = '0.3';
+    setTimeout(() => {
+      timerEl.textContent = timerVals[ti % timerVals.length];
+      timerEl.style.opacity = '1';
+      ti++;
+    }, 200);
+  }, 2200);
+  if (timerEl) timerEl.style.transition = 'opacity 0.2s';
+
+  // ── Nav shrink on scroll ───────────────────────
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.1)';
+    } else {
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.07)';
+    }
+  });
+</script>
+</body>
+</html>
