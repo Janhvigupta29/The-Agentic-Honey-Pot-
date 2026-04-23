@@ -322,6 +322,9 @@
       position: relative;
     }
 
+    .ext-link { font-family: var(--heading); font-size: 13px; font-weight: 600; color: var(--acc); display: flex; align-items: center; gap: 6px; margin-top: 8px; transition: gap 0.2s; width: fit-content; }
+    .ext-link:hover { gap: 10px; }
+
     /* Animated visuals for feature cards */
     .fc-visual-1 { background: linear-gradient(135deg, #0d1117, #111820); }
     .fc-visual-2 { background: linear-gradient(135deg, #110d1a, #0d1117); }
